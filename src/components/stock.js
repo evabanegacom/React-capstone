@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Stock({stock}) {
   return (
     <div>
-    <Link to={`/${stock.symbol}`} key={Math.random()} className='link-decor'>
+    <Link to={`/${stock.symbol}`} key={stock.symbol} className='link-decor'>
       <h3> { stock.name } </h3>
     </Link>
     </div>
