@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 /* eslint-disable */
 
-function Stock({symbol, name}) {
+function Stock({stock}) {
   return (
     <div>
-    <Link to={`/${symbol}`} key={Math.random()} className='link-decor'>
-      <h3> { name } </h3>
+    <Link to={`/${stock.symbol}`} key={Math.random()} className='link-decor'>
+      <h3> { stock.name } </h3>
     </Link>
     </div>
   );

@@ -26,7 +26,6 @@ function handleErrors(response) {
   if (!response.ok) {
     throw Error(response.statusText);
   }
-  console.log('checking errors');
   return response;
 }
 

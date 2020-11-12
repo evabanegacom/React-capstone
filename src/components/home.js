@@ -11,18 +11,13 @@ import { getStocks } from "../actions/actions";
 class Home extends Component {
   componentDidMount() {
     this.props.actions.getStocks();
-
-    this.handleClick = this.handleClick.bind(this)
   }
   
-  handleClick = () => {
-    console.log('testing')
-  }
 
   render() {
     const { stocks } = this.props;
     const stockList = stocks.slice(0, 20).map((stock) => (
-        <Stock symbol={stock.symbol} name={stock.name} handleClick={this.handleClick}/>
+        <Stock stock={stock}/>
     ));
     return(
       <div>
