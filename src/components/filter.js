@@ -1,16 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+/* eslint-disable */
 import PropTypes from 'prop-types';
 
-/* eslint-disable */
-const searchFilters = props => {
+const SearchFilters = props => {
   const { filteredStock, handleFilter } = props;
 
   const stockCategory = [
-    'NYSE',
-    'NASDAQ',
-    'AMSE',
+    'New York Stock Exchange',
+    'Nasdaq Global Select',
+    'NYSE Arca',
   ];
+
+  const handleChange = (e) => {
+    handleFilter(e.target.value)
+  }
 
   const stocktype = stockCategory.map(stock => (
     <option key={Math.random()} value={stock}>
@@ -18,7 +22,7 @@ const searchFilters = props => {
     </option>
   ));
   return (
-    <select name="Select" onChange={handleFilter} value={filteredStock}>
+    <select name="Select" onChange={(e) => handleChange(e)} value={filteredStock}>
       <option>
         ALL
       </option>
@@ -31,10 +35,5 @@ const mapStateToProps = state => ({
   filteredStock: state.filterReducer,
 });
 
-searchFilters.propTypes = {
-  filteredStock: PropTypes.string.isRequired,
-  handleFIlter: Proptypes.func.isRequired,
-};
-
-export default connect(mapStateToProps)(searchFilters);
+export default connect(mapStateToProps)(SearchFilters);
 /* eslint-enable */

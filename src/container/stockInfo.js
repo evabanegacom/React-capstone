@@ -10,6 +10,7 @@ const stockInfo = (props) => {
             <p>{stk.name}</p>
             <p>{stk.price}</p>
             <p>{stk.symbol}</p>
+            <p>{stk.exchange}</p>
           </div>
       ))
   ) : (
