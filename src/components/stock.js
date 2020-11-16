@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-/* eslint-disable */
+import PropTypes from 'prop-types';
 
 function Stock({ stock, styling }) {
   return (
-    <div style={styling} className='stockiteslf'>
+    <div style={styling}>
       <Link to={`/${stock.symbol}`} key={stock.symbol} className="link-decor">
         <h4>
           {' '}
@@ -12,10 +12,13 @@ function Stock({ stock, styling }) {
           {' '}
         </h4>
       </Link>
-      <p className='stockprice'>{stock.price}</p>
+      <p className="stockprice">{stock.price}</p>
     </div>
   );
 }
 
+Stock.propTypes = {
+  stock: PropTypes.string.isRequired,
+  styling: PropTypes.objectOf.isRequired,
+};
 export default Stock;
-/* eslint-enable */

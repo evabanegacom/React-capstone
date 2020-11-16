@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-/* eslint-disable */
 
 import PropTypes from 'prop-types';
 
@@ -23,7 +22,7 @@ const SearchFilters = props => {
     </option>
   ));
   return (
-    <select className='select' name="Select" onChange={e => handleChange(e)} value={filteredStock}>
+    <select className="select" name="Select" onChange={e => handleChange(e)} value={filteredStock}>
       <option>
         ALL
       </option>
@@ -32,9 +31,13 @@ const SearchFilters = props => {
   );
 };
 
+SearchFilters.propTypes = {
+  filteredStock: PropTypes.string.isRequired,
+  handleFilter: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = state => ({
   filteredStock: state.filterReducer,
 });
 
 export default connect(mapStateToProps)(SearchFilters);
-/* eslint-enable */

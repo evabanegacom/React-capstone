@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-/* eslint-disable */
+import PropTypes from 'prop-types';
 
 class StockInfo extends React.Component {
   constructor(props) {
@@ -44,5 +44,10 @@ class StockInfo extends React.Component {
   }
 }
 
+StockInfo.propTypes = {
+  stockId: PropTypes.string.isRequired,
+  match: PropTypes.string.isRequired,
+  params: PropTypes.string.isRequired,
+};
+
 export default StockInfo;
-/* eslint-enable */
