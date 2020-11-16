@@ -1,6 +1,6 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Stock from './stock';
@@ -9,11 +9,18 @@ import SearchFilters from './filter';
 import { getStocks, searchFilter } from '../actions/actions';
 
 class Home extends Component {
-  componentDidMount() {
-    this.props.actions.getStocks();
+  constructor(props) {
+    super(props);
 
     this.handleFilter = this.handleFilter.bind(this);
     this.filteredStock = this.filteredStock.bind(this);
+  }
+
+  componentDidMount() {
+    // this.props.actions.getStocks();
+    const { actions } = this.props;
+    const stocks = actions.getStocks();
+    return stocks;
   }
 
   handleFilter = filter => {
@@ -37,7 +44,7 @@ class Home extends Component {
     const checkFilter = this.filteredStock(stocks, filteredValue);
     const stockList = checkFilter ? (
       checkFilter.slice(0, 20)
-        .map(stock => (<Stock stock={stock} />))
+        .map(stock => (<Stock stock={stock} key={stock.symbol} />))
     ) : (<p>loading...</p>);
 
     return (
@@ -75,4 +82,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-/* eslint-enable */

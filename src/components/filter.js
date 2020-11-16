@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 /* eslint-disable */
+
 import PropTypes from 'prop-types';
 
 const SearchFilters = props => {
@@ -12,9 +13,9 @@ const SearchFilters = props => {
     'NYSE Arca',
   ];
 
-  const handleChange = (e) => {
-    handleFilter(e.target.value)
-  }
+  const handleChange = e => {
+    handleFilter(e.target.value);
+  };
 
   const stocktype = stockCategory.map(stock => (
     <option key={Math.random()} value={stock}>
@@ -22,7 +23,7 @@ const SearchFilters = props => {
     </option>
   ));
   return (
-    <select name="Select" onChange={(e) => handleChange(e)} value={filteredStock}>
+    <select name="Select" onChange={e => handleChange(e)} value={filteredStock}>
       <option>
         ALL
       </option>
