@@ -45,3 +45,29 @@ code {
   color: cyan;
   font-weight: bolder;
 }
+
+@media only screen and (max-width: 960px) {
+  .stocks {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .stocks div {
+    min-width: 49%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .stocks {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .stocks div {
+    min-width: 99%;
+  }
+}

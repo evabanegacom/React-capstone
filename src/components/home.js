@@ -42,7 +42,7 @@ class Home extends Component {
     const { stocks, filteredValue } = this.props;
     const checkFilter = this.filteredStock(stocks, filteredValue);
     const styling = {
-      width: '23%', background: 'purple', height: '100px', cursor: 'pointer', margin: 'auto', border: '1px solid gray',
+      width: '24%', background: 'purple', height: '100px', cursor: 'pointer', margin: 'auto', border: '1px solid gray',
     };
     const stockList = checkFilter ? (
       checkFilter.slice(0, 100)
