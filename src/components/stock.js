@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 /* eslint-disable */
 
-function Stock({stock}) {
+function Stock({ stock }) {
   return (
     <div>
-    <Link to={`/${stock.symbol}`} key={stock.symbol} className='link-decor'>
-      <h3> { stock.name } </h3>
-    </Link>
+      <Link to={`/${stock.symbol}`} key={stock.symbol} className="link-decor">
+        <h3>
+          {' '}
+          { stock.name }
+          {' '}
+        </h3>
+      </Link>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 /* eslint-disable */
-import React, { Component } from "react";
-import { bindActionCreators } from "redux";
-import Stock from "./stock";
-import PropTypes from "prop-types";
-import SearchFilters from "./filter";
-import { connect } from "react-redux";
-import { getStocks, searchFilter } from "../actions/actions";
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Stock from './stock';
+import SearchFilters from './filter';
+
+import { getStocks, searchFilter } from '../actions/actions';
 
 class Home extends Component {
   componentDidMount() {
@@ -15,21 +16,20 @@ class Home extends Component {
     this.filteredStock = this.filteredStock.bind(this);
   }
 
-  handleFilter = (filter) => {
+  handleFilter = filter => {
     const { filters } = this.props;
     filters(filter);
   };
 
   filteredStock = (stocks, value) => {
-    if(stocks || !stocks.length){
-    return(
-    value === "ALL" || value === undefined
-      ? stocks
-      : stocks.filter((stock) => stock.exchange === value));
+    if (stocks || !stocks.length) {
+      return (
+        value === 'ALL' || value === undefined
+          ? stocks
+          : stocks.filter(stock => stock.exchange === value));
     }
-    else{
-      return false
-    }
+
+    return false;
   }
 
   render() {
@@ -37,12 +37,9 @@ class Home extends Component {
     const checkFilter = this.filteredStock(stocks, filteredValue);
     const stockList = checkFilter ? (
       checkFilter.slice(0, 20)
-      .map((stock) =>{
-      return(<Stock stock={stock} />)
-      }
-      )
-    ) : (<p>loading...</p>)
-      
+        .map(stock => (<Stock stock={stock} />))
+    ) : (<p>loading...</p>);
+
     return (
       <div>
         <SearchFilters handleFilter={this.handleFilter} />
@@ -52,7 +49,7 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   stocks: state.stockReducer.stocks,
   filteredValue: state.filterReducer,
 });
@@ -71,7 +68,7 @@ const mapStateToProps = (state) => ({
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators({ getStocks }, dispatch),
-    filters: (filter) => {
+    filters: filter => {
       dispatch(searchFilter(filter));
     },
   };

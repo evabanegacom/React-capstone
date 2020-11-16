@@ -1,32 +1,48 @@
-import React, { connect } from 'react-redux';
+import React from 'react';
+import axios from 'axios';
 /* eslint-disable */
+class StockInfo extends React.Component {
+  constructor(props) {
+    super(props);
 
-const stockInfo = (props) => {
-  const stockId = props.match.params.stock_id
-  const currentStock = props.stocks.filter(stock => stock.symbol === stockId)
-  const stockItems = currentStock ? (
-      currentStock.map(stk =>(
-          <div  key={stk.symbol}>
-            <p>{stk.name}</p>
-            <p>{stk.price}</p>
-            <p>{stk.symbol}</p>
-            <p>{stk.exchange}</p>
-          </div>
-      ))
-  ) : (
-      <p>loading.....</p>
-  )
-  return (
-  <div>
-    <h3>stock item</h3>
-    {stockItems}
-  </div>
-  )
-};
+    this.state = {
+      stock: null,
+    };
+  }
 
-const mapStateToProps = state => ({
-  stocks: state.stockReducer.stocks
-});
 
-export default connect(mapStateToProps)(stockInfo);
+
+  componentDidMount() {
+    const { match } = this.props;
+    const { params } = match;
+    const { stockId } = params;
+    //const stockId = this.props.match.params.stock_id;
+    axios.get(`https://financialmodelingprep.com/api/v3/profile/${stockId}?apikey=f4c26544319bdea248167bac8bd358fd`)
+      .then(res => {
+        this.setState({
+          stock: res.data,
+        });
+      });
+  }
+
+  render() {
+    const stock = this.state.stock ? (
+      <div>
+        <p>{this.state.stock[0].description}</p>
+        <p>{this.state.stock[0].volAvg}</p>
+      </div>
+    ) : (
+      <div>
+        <p>loading...</p>
+      </div>
+    );
+    return (
+      <div>
+        {stock}
+      </div>
+    );
+  }
+}
+
+export default StockInfo;
 /* eslint-enable */
