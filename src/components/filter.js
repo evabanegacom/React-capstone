@@ -10,6 +10,7 @@ const SearchFilters = props => {
     'New York Stock Exchange',
     'Nasdaq Global Select',
     'NYSE Arca',
+    'NASDAQ Capital Market',
   ];
 
   const handleChange = e => {
