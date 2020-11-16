@@ -23,7 +23,7 @@ const SearchFilters = props => {
     </option>
   ));
   return (
-    <select name="Select" onChange={e => handleChange(e)} value={filteredStock}>
+    <select className='select' name="Select" onChange={e => handleChange(e)} value={filteredStock}>
       <option>
         ALL
       </option>

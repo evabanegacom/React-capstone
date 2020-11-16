@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-
+/* eslint-disable */
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Stock from './stock';
@@ -42,15 +42,20 @@ class Home extends Component {
   render() {
     const { stocks, filteredValue } = this.props;
     const checkFilter = this.filteredStock(stocks, filteredValue);
+    const styling = {width: '23%', background: 'purple', height: '100px', cursor: 'pointer', margin: 'auto', border: '1px solid gray'}
     const stockList = checkFilter ? (
-      checkFilter.slice(0, 20)
-        .map(stock => (<Stock stock={stock} key={stock.symbol} />))
+      checkFilter.slice(0, 100)
+        .map(stock => (<Stock stock={stock} styling={ styling} key={stock.symbol} />))
     ) : (<p>loading...</p>);
 
     return (
       <div>
-        <SearchFilters handleFilter={this.handleFilter} />
-        {stockList}
+        <div className='searchdiv'>
+          <SearchFilters handleFilter={this.handleFilter} />
+        </div>
+        <div className='stocks'>
+          {stockList}
+        </div>
       </div>
     );
   }
@@ -82,3 +87,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
+/* eslint-enable */
