@@ -1,0 +1,16 @@
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-top: -10px;
+}
+
+.desc {
+  background: rgb(219, 9, 219);
+  color: black;
+}
+
+.desc p {
+  line-height: 30px;
+  font-size: 18px;
+  color: black;
+}

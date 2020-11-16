@@ -46,6 +46,26 @@ code {
   font-weight: bolder;
 }
 
+.divDetails {
+  display: flex;
+  flex-direction: column;
+  background: #004080;
+}
+
+.image {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.image p {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  margin-left: -50px;
+}
+
 @media only screen and (max-width: 960px) {
   .stocks {
     width: 100%;

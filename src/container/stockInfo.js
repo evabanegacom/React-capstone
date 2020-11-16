@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import style from '../Detail.module.css';
 
 class StockInfo extends React.Component {
   constructor(props) {
@@ -27,9 +28,19 @@ class StockInfo extends React.Component {
   render() {
     const { stock } = this.state;
     const returnedstock = stock ? (
-      <div>
-        <p>{stock[0].description}</p>
-        <p>{stock[0].volAvg}</p>
+      <div className="divDetails">
+        <div className="image">
+          <p>{stock[0].companyName}</p>
+&nbsp;&nbsp;&nbsp;
+          <img className={style.logo} src={stock[0].image} alt="logo" />
+        </div>
+        <div className={style.desc}>
+          <p>{stock[0].description}</p>
+        </div>
+        <p>
+          volume average:
+          {stock[0].volAvg}
+        </p>
       </div>
     ) : (
       <div>
