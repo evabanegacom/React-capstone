@@ -20,3 +20,15 @@
   justify-content: space-evenly;
   color: white;
 }
+
+.back {
+  background: rgb(9, 37, 37);
+  text-align: center;
+}
+
+.back a {
+  text-decoration: none;
+  color: cyan;
+  font-size: 20px;
+  font-weight: 700;
+}

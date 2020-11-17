@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import style from '../Detail.module.css';
 
 class StockInfo extends React.Component {
@@ -63,6 +64,9 @@ class StockInfo extends React.Component {
             &nbsp;
             {stock[0].currency}
           </p>
+        </div>
+        <div className={style.back}>
+          <Link to="/"><p>Back</p></Link>
         </div>
       </div>
     ) : (
