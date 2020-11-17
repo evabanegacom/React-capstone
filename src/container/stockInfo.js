@@ -37,10 +37,33 @@ class StockInfo extends React.Component {
         <div className={style.desc}>
           <p>{stock[0].description}</p>
         </div>
-        <p>
-          volume average:
-          {stock[0].volAvg}
-        </p>
+        <div className={style.finance}>
+          <p>
+            volume average:
+            &nbsp;
+            {stock[0].volAvg}
+          </p>
+          <p>
+            industry:
+            &nbsp;
+            {stock[0].industry}
+          </p>
+          <p>
+            Market Capital:
+            &nbsp;
+            {stock[0].mktCap}
+          </p>
+          <p>
+            Website:
+            &nbsp;
+            {stock[0].website}
+          </p>
+          <p>
+            Currency:
+            &nbsp;
+            {stock[0].currency}
+          </p>
+        </div>
       </div>
     ) : (
       <div>

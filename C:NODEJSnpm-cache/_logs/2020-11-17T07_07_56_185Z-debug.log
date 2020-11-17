@@ -1,0 +1,61 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   '/home/precious/.nvm/versions/node/v14.4.0/bin/node',
+1 verbose cli   '/home/precious/.nvm/versions/node/v14.4.0/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save-dev',
+1 verbose cli   'eslint@6.8.x',
+1 verbose cli   'eslint-config-airbnb@18.1.x',
+1 verbose cli   'eslint-plugin-import@2.22.1.x',
+1 verbose cli   'eslint-plugin-jsx-a11y@6.2.x',
+1 verbose cli   'eslint-plugin-react@7.20.x',
+1 verbose cli   'eslint-plugin-react-hooks@2.5.x',
+1 verbose cli   'babel-eslint@10.1.x'
+1 verbose cli ]
+2 info using npm@6.14.7
+3 info using node@v14.4.0
+4 verbose npm-session 695099fac9bbcee4
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 304 https://registry.npmjs.org/eslint-config-airbnb 1375ms (from cache)
+8 silly pacote range manifest for eslint-config-airbnb@18.1.x fetched in 1399ms
+9 http fetch GET 304 https://registry.npmjs.org/eslint-plugin-react-hooks 1279ms (from cache)
+10 http fetch GET 304 https://registry.npmjs.org/eslint-plugin-jsx-a11y 1305ms (from cache)
+11 http fetch GET 304 https://registry.npmjs.org/eslint 1433ms (from cache)
+12 http fetch GET 304 https://registry.npmjs.org/babel-eslint 1338ms (from cache)
+13 http fetch GET 304 https://registry.npmjs.org/eslint-plugin-react 1356ms (from cache)
+14 http fetch GET 304 https://registry.npmjs.org/eslint-plugin-import 1374ms (from cache)
+15 silly registry:manifest no matching version for eslint-plugin-import@2.22.1.x in the cache. Forcing revalidation.
+16 silly pacote range manifest for eslint-plugin-react-hooks@2.5.x fetched in 1433ms
+17 silly pacote range manifest for eslint-plugin-jsx-a11y@6.2.x fetched in 1441ms
+18 silly pacote range manifest for eslint@6.8.x fetched in 1587ms
+19 silly pacote range manifest for eslint-plugin-react@7.20.x fetched in 1453ms
+20 silly pacote range manifest for babel-eslint@10.1.x fetched in 1442ms
+21 http fetch GET 200 https://registry.npmjs.org/eslint-plugin-import 332ms
+22 silly fetchPackageMetaData error for eslint-plugin-import@2.22.1.x No matching version found for eslint-plugin-import@2.22.1.x.
+23 timing stage:rollbackFailedOptional Completed in 3ms
+24 timing stage:runTopLevelLifecycles Completed in 9790ms
+25 verbose type tag
+26 verbose stack eslint-plugin-import: No matching version found for eslint-plugin-import@2.22.1.x.
+26 verbose stack     at pickManifest (/home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/npm-pick-manifest/index.js:122:13)
+26 verbose stack     at /home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/pacote/lib/fetchers/registry/manifest.js:43:18
+26 verbose stack     at tryCatcher (/home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/bluebird/js/release/util.js:16:23)
+26 verbose stack     at Promise._settlePromiseFromHandler (/home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:517:31)
+26 verbose stack     at Promise._settlePromise (/home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:574:18)
+26 verbose stack     at Promise._settlePromise0 (/home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:619:10)
+26 verbose stack     at Promise._settlePromises (/home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/bluebird/js/release/promise.js:699:18)
+26 verbose stack     at _drainQueueStep (/home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:138:12)
+26 verbose stack     at _drainQueue (/home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:131:9)
+26 verbose stack     at Async._drainQueues (/home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:147:5)
+26 verbose stack     at Immediate.Async.drainQueues [as _onImmediate] (/home/precious/.nvm/versions/node/v14.4.0/lib/node_modules/npm/node_modules/bluebird/js/release/async.js:17:14)
+26 verbose stack     at processImmediate (internal/timers.js:456:21)
+27 verbose cwd /home/precious/stocks
+28 verbose Linux 5.3.0-62-generic
+29 verbose argv "/home/precious/.nvm/versions/node/v14.4.0/bin/node" "/home/precious/.nvm/versions/node/v14.4.0/bin/npm" "install" "--save-dev" "eslint@6.8.x" "eslint-config-airbnb@18.1.x" "eslint-plugin-import@2.22.1.x" "eslint-plugin-jsx-a11y@6.2.x" "eslint-plugin-react@7.20.x" "eslint-plugin-react-hooks@2.5.x" "babel-eslint@10.1.x"
+30 verbose node v14.4.0
+31 verbose npm  v6.14.7
+32 error code ETARGET
+33 error notarget No matching version found for eslint-plugin-import@2.22.1.x.
+34 error notarget In most cases you or one of your dependencies are requesting
+34 error notarget a package version that doesn't exist.
+35 verbose exit [ 1, true ]

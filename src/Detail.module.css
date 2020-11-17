@@ -14,3 +14,9 @@
   font-size: 18px;
   color: black;
 }
+
+.finance {
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+}
