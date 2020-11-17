@@ -77,4 +77,4 @@ This project was built using these technologies.
 ## Acknowledgements
 * [Microverse](https://www.microverse.org/)
 * [The Odin Project](https://www.theodinproject.com/)
-* [Gregoire Vella] (https://www.behance.net/gregoirevella) for the design concept.
+* [Gregoire Vella] (https://www.behance.net/gregoirevella) for the design concept..
