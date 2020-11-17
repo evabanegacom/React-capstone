@@ -19,7 +19,7 @@ This project is part of the Microverse curriculum in React&Redux module!
 <br />
 <p align="center">
   <a href="https://github.com/evabanegacom/React-capstone/feature">
-    <img src="images/react.jpg" alt="Logo" width="80" height="80">
+    <img src="images/react.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Js-capstone</h3>
@@ -56,7 +56,7 @@ To have this app on your pc, you need to:
 # Live Demo
 - (https://eagle-claw.herokuapp.com/)
 
-![Screenshot](images/cal.png)
+![Screenshot](images/app.png)
 
 ### Built With
 This project was built using these technologies.
