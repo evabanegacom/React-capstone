@@ -67,16 +67,6 @@ const mapStateToProps = state => ({
   filteredValue: state.filterReducer,
 });
 
-// const mapStateToProps = state => {
-//   console.log(state)
-//   return {
-//     stocks: state.stockReducer.stocks
-//   }
-//   }
-
-// const mapDispatchToProps = (dispatch) => ({
-//   getStocks: () => dispatch(getStocks),
-// });
 
 Home.propTypes = {
   stocks: PropTypes.arrayOf(PropTypes.object).isRequired,
