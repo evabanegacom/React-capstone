@@ -67,7 +67,6 @@ const mapStateToProps = state => ({
   filteredValue: state.filterReducer,
 });
 
-
 Home.propTypes = {
   stocks: PropTypes.arrayOf(PropTypes.object).isRequired,
   filters: PropTypes.string.isRequired,
