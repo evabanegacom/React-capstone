@@ -95,4 +95,9 @@ code {
   .stocks div {
     min-width: 99%;
   }
+
+  .image p {
+    margin-left: 0;
+    font-size: 20px;
+  }
 }
