@@ -1,7 +1,7 @@
-import stockReducer from "../reducers/stockReducer";
+import stockReducer from '../reducers/stockReducer';
 
-describe("stocks reducer", () => {
-  it("should return the initial state", () => {
+describe('stocks reducer', () => {
+  it('should return the initial state', () => {
     expect(stockReducer(undefined, {})).toEqual({
       stocks: [],
       waiting: 'wait for it',

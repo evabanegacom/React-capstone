@@ -71,7 +71,7 @@ class StockInfo extends React.Component {
       </div>
     ) : (
       <div>
-        <p>loading...</p>
+        <p>WAIT FOR IT...</p>
       </div>
     );
     return (
