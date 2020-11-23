@@ -17,7 +17,6 @@ class StockInfo extends React.Component {
     const { match } = this.props;
     const { params } = match;
     const { stockId } = params;
-    // const stockId = this.props.match.params.stock_id;
     axios.get(`https://financialmodelingprep.com/api/v3/profile/${stockId}?apikey=f4c26544319bdea248167bac8bd358fd`)
       .then(res => {
         this.setState({

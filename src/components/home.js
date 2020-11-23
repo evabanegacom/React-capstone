@@ -16,7 +16,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    // this.props.actions.getStocks();
     const { actions } = this.props;
     const stocks = actions.getStocks();
     return stocks;
