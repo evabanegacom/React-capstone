@@ -53,11 +53,11 @@ To have this app on your pc, you need to:
   ```
 * Open the terminal inside the cloned directory:-
 
-- Start app with :
+- Start the app with :
   ```
   npm start OR yarn start
 
-  - Run test with SSH:
+  - Run test with:
   ```
   npm test
 
