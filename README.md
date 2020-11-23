@@ -53,6 +53,14 @@ To have this app on your pc, you need to:
   ```
 * Open the terminal inside the cloned directory:-
 
+- Start app with :
+  ```
+  npm start OR yarn start
+
+  - Run test with SSH:
+  ```
+  npm test
+
 # Live Demo
 - (https://eagle-claw.herokuapp.com/)
 
