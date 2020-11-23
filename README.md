@@ -56,6 +56,9 @@ To have this app on your pc, you need to:
 # Live Demo
 - (https://eagle-claw.herokuapp.com/)
 
+# VIDEO DEMO
+- (https://youtu.be/wAl0Kw3JIo8)
+
 ![Screenshot](images/app.png)
 
 ### Built With
