@@ -22,7 +22,7 @@ This project is part of the Microverse curriculum in React&Redux module!
     <img src="images/react.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Js-capstone</h3>
+  <h3 align="center">React-capstone</h3>
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
