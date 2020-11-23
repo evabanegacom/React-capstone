@@ -19,6 +19,6 @@ function Stock({ stock, styling }) {
 
 Stock.propTypes = {
   stock: PropTypes.string.isRequired,
-  styling: PropTypes.objectOf.isRequired,
+  styling: PropTypes.func.isRequired,
 };
 export default Stock;
