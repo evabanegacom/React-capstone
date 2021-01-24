@@ -1,55 +1,85 @@
-/* eslint-disable */
 import React, { Component } from 'react';
-import { bindActionCreators } from "redux";
-import Stock from './stock'
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Stock from './stock';
+import SearchFilters from './filter';
 
-import PropTypes from "prop-types";
-// import SearchBar from '../container/search';
-import { connect } from "react-redux";
-import { getStocks } from "../actions/actions";
+import { getStocks, searchFilter } from '../actions/actions';
 
 class Home extends Component {
-  componentDidMount() {
-    this.props.actions.getStocks();
+  constructor(props) {
+    super(props);
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleFilter = this.handleFilter.bind(this);
+    this.filteredStock = this.filteredStock.bind(this);
   }
-  
-  handleClick = () => {
-    console.log('testing')
+
+  componentDidMount() {
+    const { actions } = this.props;
+    const stocks = actions.getStocks();
+    return stocks;
+  }
+
+  handleFilter = filter => {
+    const { filters } = this.props;
+    filters(filter);
+  };
+
+  filteredStock = (stocks, value) => {
+    if (stocks || !stocks.length) {
+      return (
+        value === 'ALL' || value === undefined
+          ? stocks
+          : stocks.filter(stock => stock.exchange === value));
+    }
+
+    return false;
   }
 
   render() {
-    const { stocks } = this.props;
-    const stockList = stocks.slice(0, 20).map((stock) => (
-        <Stock symbol={stock.symbol} name={stock.name} handleClick={this.handleClick}/>
-    ));
-    return(
+    const { stocks, filteredValue } = this.props;
+    const checkFilter = this.filteredStock(stocks, filteredValue);
+    const styling = {
+      width: '24%', background: 'purple', height: '100px', cursor: 'pointer', margin: 'auto', border: '1px solid gray',
+    };
+    const stockList = checkFilter ? (
+      checkFilter.slice(0, 100)
+        .map(stock => (<Stock stock={stock} styling={styling} key={stock.symbol} />))
+    ) : (<p>loading...</p>);
+
+    return (
       <div>
-        {stockList}
+        <div className="searchdiv">
+          <SearchFilters handleFilter={this.handleFilter} />
+        </div>
+        <div className="stocks">
+          {stockList}
+        </div>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   stocks: state.stockReducer.stocks,
+  filteredValue: state.filterReducer,
 });
 
-// const mapStateToProps = state => {
-//   console.log(state)
-//   return {
-//     stocks: state.stockReducer.stocks
-//   }
-//   }
-
-// const mapDispatchToProps = (dispatch) => ({
-//   getStocks: () => dispatch(getStocks),
-// });
+Home.propTypes = {
+  stocks: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filters: PropTypes.string.isRequired,
+  filteredValue: PropTypes.string.isRequired,
+  actions: PropTypes.func.isRequired,
+};
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators({ getStocks }, dispatch) };
+  return {
+    actions: bindActionCreators({ getStocks }, dispatch),
+    filters: filter => {
+      dispatch(searchFilter(filter));
+    },
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-/* eslint-enable */

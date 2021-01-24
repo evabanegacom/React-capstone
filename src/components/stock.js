@@ -1,17 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-/* eslint-disable */
-
-function Stock({symbol, name}) {
+function Stock({ stock, styling }) {
   return (
-    <div>
-    <Link to={`/${symbol}`} key={Math.random()} className='link-decor'>
-      <h3> { name } </h3>
-    </Link>
+    <div style={styling}>
+      <Link to={`/${stock.symbol}`} key={stock.symbol} className="link-decor">
+        <h4>
+          {' '}
+          { stock.name }
+          {' '}
+        </h4>
+      </Link>
+      <p className="stockprice">{stock.price}</p>
     </div>
   );
 }
 
+Stock.propTypes = {
+  stock: PropTypes.string.isRequired,
+  styling: PropTypes.func.isRequired,
+};
 export default Stock;
-/* eslint-enable */
