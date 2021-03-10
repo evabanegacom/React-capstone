@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const searchFilter = stockCategory => ({
   type: 'CHANGE_FILTERS',
   stockCategory,
@@ -31,7 +33,7 @@ function handleErrors(response) {
 export function getStocks() {
   return dispatch => {
     dispatch(fetchStocksBegin());
-    return fetch('https://financialmodelingprep.com/api/v3/stock/list?apikey=f4c26544319bdea248167bac8bd358fd')
+    return fetch('https://api.spacexdata.com/v4/launches/past')
       .then(handleErrors)
       .then(res => res.json()
         .then(json => {
@@ -41,3 +43,5 @@ export function getStocks() {
       .catch(error => dispatch(fetchStocksFailure(error)));
   };
 }
+
+/* eslint-enable */

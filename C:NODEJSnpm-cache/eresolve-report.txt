@@ -1,0 +1,72 @@
+# npm resolution error report
+
+2021-03-10T13:58:46.237Z
+
+While resolving: stocks@0.1.0
+Found: react@17.0.1
+node_modules/react
+  react@"^17.0.1" from the root project
+
+Could not resolve dependency:
+peer react@"^16.0.0" from react-paginate@6.5.0
+node_modules/react-paginate
+  react-paginate@"^6.5.0" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force, or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.
+
+Raw JSON explanation object:
+
+{
+  "code": "ERESOLVE",
+  "current": {
+    "name": "react",
+    "version": "17.0.1",
+    "whileInstalling": {
+      "name": "stocks",
+      "version": "0.1.0",
+      "path": "/home/precious/stocks"
+    },
+    "location": "node_modules/react",
+    "dependents": [
+      {
+        "type": "prod",
+        "name": "react",
+        "spec": "^17.0.1",
+        "from": {
+          "location": "/home/precious/stocks"
+        }
+      }
+    ]
+  },
+  "edge": {
+    "type": "peer",
+    "name": "react",
+    "spec": "^16.0.0",
+    "error": "INVALID",
+    "from": {
+      "name": "react-paginate",
+      "version": "6.5.0",
+      "whileInstalling": {
+        "name": "stocks",
+        "version": "0.1.0",
+        "path": "/home/precious/stocks"
+      },
+      "location": "node_modules/react-paginate",
+      "dependents": [
+        {
+          "type": "prod",
+          "name": "react-paginate",
+          "spec": "^6.5.0",
+          "from": {
+            "location": "/home/precious/stocks"
+          }
+        }
+      ]
+    }
+  },
+  "peerConflict": null,
+  "strictPeerDeps": false,
+  "force": false
+}

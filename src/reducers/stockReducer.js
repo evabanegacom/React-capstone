@@ -11,6 +11,8 @@ const initialState = {
 };
 
 const stockReducer = (state = initialState, action) => {
+  console.log(action.payload);
+
   switch (action.type) {
     case FETCH_STOCKS_BEGIN:
       return {
